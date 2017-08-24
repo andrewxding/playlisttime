@@ -6,9 +6,9 @@ import random
 import urllib
 import time
 class Da():
-    def __init__(self):
-        self.client_id = 'f19c760ba4b14c5390f21a7a8c7a93c9'
-        self.client_secret = '092e7ee6b39749a5a14e9c714eeae349'
+    def __init__(self, cid, secret):
+        self.client_id = cid
+        self.client_secret = secret
         self.url = 'https://accounts.spotify.com/api/token'
         self.solved = False
         self.titles = []
