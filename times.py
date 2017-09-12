@@ -92,7 +92,6 @@ class Da():
 
 
 if __name__ == "__main__":
-    user = '1258151442'
     me = Da()
     token = me.getToken()
     tracks = me.getPlaylist(token)
@@ -100,11 +99,11 @@ if __name__ == "__main__":
     songs = me.getSongs(tracks, int(sys.argv[1]))
     uris = me.getTracks(songs, token)
 
-    #me.authorizeUser('f19c760ba4b14c5390f21a7a8c7a93c9')
-    user = '1258151442'
-    token = 'BQAsmLT9XV_oS6tdTyAxRjfC-z9JNbNztJEiPoSaC6_ISbCBRnZ_sLUmQpSKPHX-9pQ5lOSD-KEM_uaPs9j-XfK-pVYslhXGITJ6F4fQXC91X3bLWVeZTqktRB0Sr_qyZkYK7FtJ25mo0NITcERRgFGXTuXLxZxB7zCnPlbuAGXp0wrGbM7wpFgf3rd6ofijNqj91MN4m05aL8s5-8_BC1HotKjd6az4KyN80fU'
-    
-    playlistid = me.createPlaylist(token, user, 'me')
+    me.authorizeUser(me.client_id)
+    token = input('Enter token')
+    user = input('Enter user id, not username')
+    playlistname = input('Enter name of new playlist')
+    playlistid = me.createPlaylist(token, user, playlistname)
     me.addTracksToPlaylist(uris, playlistid, user, token)
 
     
