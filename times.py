@@ -60,7 +60,7 @@ class Da():
             remaining = numbers[i+1:]
             self.subset_sum(remaining, target, partial + [n]) 
 
-    def createPlaylist(self,token, userid, name, public=False, collaborative=False, description=""):
+    def createPlaylist(self,token, userid, name, public=False, collaborative=False, description="Created by playlisttime"):
         url = 'https://api.spotify.com/v1/users/'+ userid+'/playlists'
         headers = {'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'}
         data = json.dumps({'name': name, 'public': public, 'collaborative': collaborative, 'description': description})
